@@ -7,7 +7,6 @@
 
   var presentBtn = document.getElementById("present-btn");
   var video = document.getElementById("birthday-video");
-  var unmuteBtn = document.getElementById("unmute-btn");
   var opened = false;
 
   // --- iOS Safari real viewport height fix ---------------------------------
@@ -28,8 +27,8 @@
 
     // IMPORTANT (iOS Safari): video.play() must be called synchronously
     // inside the user gesture handler, not after a setTimeout/delay, or
-    // iOS will silently block it. The video is muted so this is guaranteed
-    // to succeed even if the visual reveal is still animating in.
+    // iOS will silently block it. Because this call is a direct result of
+    // her tap, iOS allows it to play with sound — no mute/unmute step needed.
     if (video) {
       video.play().catch(function () {
         // If autoplay is still blocked for any reason, the native
@@ -57,20 +56,4 @@
   }
 
   presentBtn.addEventListener("click", openPresent);
-
-  // --- Unmute control ---------------------------------------------------
-  if (unmuteBtn && video) {
-    unmuteBtn.addEventListener("click", function () {
-      video.muted = false;
-      video.volume = 1;
-      unmuteBtn.classList.add("hidden");
-    });
-
-    // If she taps the video itself, treat that as intent to hear it too.
-    video.addEventListener("play", function () {
-      if (!video.muted) {
-        unmuteBtn.classList.add("hidden");
-      }
-    });
-  }
 })();

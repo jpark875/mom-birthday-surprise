@@ -16,33 +16,26 @@
 </head>
 <body>
 
-  <!-- Decorative flowers that bloom in behind the reveal. Purely decorative. -->
-  <div id="flowers" aria-hidden="true">
-    <svg class="flower flower--1" viewBox="0 0 100 100"><g><circle class="petal" cx="50" cy="26" r="17"/><circle class="petal" cx="50" cy="74" r="17"/><circle class="petal" cx="26" cy="50" r="17"/><circle class="petal" cx="74" cy="50" r="17"/><circle class="flower-center" cx="50" cy="50" r="13"/></g></svg>
-    <svg class="flower flower--2" viewBox="0 0 100 100"><g><circle class="petal" cx="50" cy="26" r="17"/><circle class="petal" cx="50" cy="74" r="17"/><circle class="petal" cx="26" cy="50" r="17"/><circle class="petal" cx="74" cy="50" r="17"/><circle class="flower-center" cx="50" cy="50" r="13"/></g></svg>
-    <svg class="flower flower--3" viewBox="0 0 100 100"><g><circle class="petal" cx="50" cy="26" r="17"/><circle class="petal" cx="50" cy="74" r="17"/><circle class="petal" cx="26" cy="50" r="17"/><circle class="petal" cx="74" cy="50" r="17"/><circle class="flower-center" cx="50" cy="50" r="13"/></g></svg>
-    <svg class="flower flower--4" viewBox="0 0 100 100"><g><circle class="petal" cx="50" cy="26" r="17"/><circle class="petal" cx="50" cy="74" r="17"/><circle class="petal" cx="26" cy="50" r="17"/><circle class="petal" cx="74" cy="50" r="17"/><circle class="flower-center" cx="50" cy="50" r="13"/></g></svg>
-    <svg class="flower flower--5" viewBox="0 0 100 100"><g><circle class="petal" cx="50" cy="26" r="17"/><circle class="petal" cx="50" cy="74" r="17"/><circle class="petal" cx="26" cy="50" r="17"/><circle class="petal" cx="74" cy="50" r="17"/><circle class="flower-center" cx="50" cy="50" r="13"/></g></svg>
-    <svg class="flower flower--6" viewBox="0 0 100 100"><g><circle class="petal" cx="50" cy="26" r="17"/><circle class="petal" cx="50" cy="74" r="17"/><circle class="petal" cx="26" cy="50" r="17"/><circle class="petal" cx="74" cy="50" r="17"/><circle class="flower-center" cx="50" cy="50" r="13"/></g></svg>
-  </div>
-
   <main id="stage">
 
     <!-- The present. This is the only thing visible on load. -->
     <button type="button" id="present-btn" class="present-btn" aria-label="Tap to open your birthday surprise">
-      <span class="gift">
-        <span class="gift-lid">
-          <span class="bow">
-            <span class="bow__loop bow__loop--l"></span>
-            <span class="bow__loop bow__loop--r"></span>
-            <span class="bow__center"></span>
-          </span>
-          <span class="ribbon ribbon--lid"></span>
-        </span>
-        <span class="gift-box">
-          <span class="ribbon ribbon--box"></span>
-        </span>
-      </span>
+      <svg class="gift" viewBox="0 0 100 100" aria-hidden="true">
+        <g class="gift-box">
+          <rect class="box-body" x="16" y="44" width="68" height="46" rx="2"></rect>
+          <line class="ribbon-line" x1="50" y1="44" x2="50" y2="90"></line>
+          <line class="ribbon-line" x1="16" y1="67" x2="84" y2="67"></line>
+        </g>
+        <g class="gift-lid">
+          <rect class="lid-box" x="10" y="30" width="80" height="14" rx="2"></rect>
+          <line class="ribbon-line" x1="50" y1="30" x2="50" y2="44"></line>
+          <g class="bow">
+            <ellipse class="bow-loop" cx="40" cy="20" rx="10" ry="7" transform="rotate(-25 40 20)"></ellipse>
+            <ellipse class="bow-loop" cx="60" cy="20" rx="10" ry="7" transform="rotate(25 60 20)"></ellipse>
+            <circle class="bow-knot" cx="50" cy="22" r="3.5"></circle>
+          </g>
+        </g>
+      </svg>
       <span class="tap-hint">tap to open</span>
     </button>
 
@@ -62,12 +55,10 @@
         src="my-video.mp4"
         playsinline
         webkit-playsinline="true"
-        muted
         controls
         preload="auto">
         Your browser doesn't support embedded video.
       </video>
-      <button type="button" id="unmute-btn" aria-label="Unmute video">🔇</button>
     </div>
 
   </main>
