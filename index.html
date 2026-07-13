@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<title>Happy Birthday</title>
+<meta name="description" content="A little birthday surprise.">
+
+<!-- iOS Safari / "Add to Home Screen" niceties -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%81%3C/text%3E%3C/svg%3E">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Decorative flowers that bloom in behind the reveal. Purely decorative. -->
+  <div id="flowers" aria-hidden="true">
+    <svg class="flower flower--1" viewBox="0 0 100 100"><g><circle class="petal" cx="50" cy="26" r="17"/><circle class="petal" cx="50" cy="74" r="17"/><circle class="petal" cx="26" cy="50" r="17"/><circle class="petal" cx="74" cy="50" r="17"/><circle class="flower-center" cx="50" cy="50" r="13"/></g></svg>
+    <svg class="flower flower--2" viewBox="0 0 100 100"><g><circle class="petal" cx="50" cy="26" r="17"/><circle class="petal" cx="50" cy="74" r="17"/><circle class="petal" cx="26" cy="50" r="17"/><circle class="petal" cx="74" cy="50" r="17"/><circle class="flower-center" cx="50" cy="50" r="13"/></g></svg>
+    <svg class="flower flower--3" viewBox="0 0 100 100"><g><circle class="petal" cx="50" cy="26" r="17"/><circle class="petal" cx="50" cy="74" r="17"/><circle class="petal" cx="26" cy="50" r="17"/><circle class="petal" cx="74" cy="50" r="17"/><circle class="flower-center" cx="50" cy="50" r="13"/></g></svg>
+    <svg class="flower flower--4" viewBox="0 0 100 100"><g><circle class="petal" cx="50" cy="26" r="17"/><circle class="petal" cx="50" cy="74" r="17"/><circle class="petal" cx="26" cy="50" r="17"/><circle class="petal" cx="74" cy="50" r="17"/><circle class="flower-center" cx="50" cy="50" r="13"/></g></svg>
+    <svg class="flower flower--5" viewBox="0 0 100 100"><g><circle class="petal" cx="50" cy="26" r="17"/><circle class="petal" cx="50" cy="74" r="17"/><circle class="petal" cx="26" cy="50" r="17"/><circle class="petal" cx="74" cy="50" r="17"/><circle class="flower-center" cx="50" cy="50" r="13"/></g></svg>
+    <svg class="flower flower--6" viewBox="0 0 100 100"><g><circle class="petal" cx="50" cy="26" r="17"/><circle class="petal" cx="50" cy="74" r="17"/><circle class="petal" cx="26" cy="50" r="17"/><circle class="petal" cx="74" cy="50" r="17"/><circle class="flower-center" cx="50" cy="50" r="13"/></g></svg>
+  </div>
+
+  <main id="stage">
+
+    <!-- The present. This is the only thing visible on load. -->
+    <button type="button" id="present-btn" class="present-btn" aria-label="Tap to open your birthday surprise">
+      <span class="gift">
+        <span class="gift-lid">
+          <span class="bow">
+            <span class="bow__loop bow__loop--l"></span>
+            <span class="bow__loop bow__loop--r"></span>
+            <span class="bow__center"></span>
+          </span>
+          <span class="ribbon ribbon--lid"></span>
+        </span>
+        <span class="gift-box">
+          <span class="ribbon ribbon--box"></span>
+        </span>
+      </span>
+      <span class="tap-hint">tap to open</span>
+    </button>
+
+    <!-- The reveal. Hidden until the present is opened. -->
+    <div id="video-wrap">
+      <!--
+        ============================================================
+        INSERT YOUR VIDEO FILE HERE
+        1. Put your video file in this same folder (next to index.html).
+        2. Replace "my-video.mp4" below with your file's name, e.g. src="mom-message.mp4"
+        3. If you have it, add a poster="my-video-poster.jpg" attribute to
+           the <video> tag for a nicer thumbnail before it plays.
+        ============================================================
+      -->
+      <video
+        id="birthday-video"
+        src="my-video.mp4"
+        playsinline
+        webkit-playsinline="true"
+        muted
+        controls
+        preload="auto">
+        Your browser doesn't support embedded video.
+      </video>
+      <button type="button" id="unmute-btn" aria-label="Unmute video">🔇</button>
+    </div>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
