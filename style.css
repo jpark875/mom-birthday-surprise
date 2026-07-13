@@ -68,7 +68,6 @@ body.is-opening {
   cursor: pointer;
   -webkit-appearance: none;
   appearance: none;
-  transition: opacity 0.6s ease 0.5s;
 }
 
 .present-btn.is-hidden {
@@ -101,14 +100,14 @@ body.is-opening {
 
 .gift-box {
   transform-origin: 50% 0%;
-  transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.05s,
-              opacity 0.6s ease 0.05s;
+  transition: transform 1.05s cubic-bezier(0.16, 1, 0.3, 1) 0.12s,
+              opacity 1.05s ease 0.12s;
 }
 
 .gift-lid {
   transform-origin: 50% 100%;
-  transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1),
-              opacity 0.6s ease;
+  transition: transform 1.05s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 1.05s ease;
 }
 
 .tap-hint {
@@ -133,16 +132,12 @@ body.is-opening {
 }
 
 .present-btn.is-opening .gift-lid {
-  transform: translateY(-42px) rotate(-4deg);
+  transform: translateY(-64px) rotate(-7deg);
   opacity: 0;
 }
 
 .present-btn.is-opening .gift-box {
-  transform: translateY(8px) scale(0.96);
-  opacity: 0;
-}
-
-.present-btn.is-opening.fade-out {
+  transform: translateY(12px) scale(0.94);
   opacity: 0;
 }
 
@@ -160,7 +155,7 @@ body.is-opening {
   opacity: 0;
   transform: scale(0.94);
   pointer-events: none;
-  transition: opacity 0.9s ease 0.4s, transform 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.4s;
+  transition: opacity 1s ease 0.6s, transform 1s cubic-bezier(0.16, 1, 0.3, 1) 0.6s;
 }
 
 body.is-opening #video-wrap {

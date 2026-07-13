@@ -41,18 +41,15 @@
     presentBtn.setAttribute("aria-hidden", "true");
     presentBtn.disabled = true;
 
-    // Once the lid/box finish animating away, remove the button from the
-    // layout entirely so it can never be tapped again or block the video.
-    var handled = false;
-    presentBtn.addEventListener("transitionend", function onEnd(e) {
-      if (handled) return;
-      handled = true;
-      presentBtn.removeEventListener("transitionend", onEnd);
-      presentBtn.classList.add("fade-out");
-      window.setTimeout(function () {
-        presentBtn.classList.add("is-hidden");
-      }, 650);
-    });
+    // Remove the button from the layout once the lid/box finish animating
+    // away (gift-box's transform is the last property to finish: 0.12s
+    // delay + 1.05s duration = 1.17s — matches the CSS above). A fixed
+    // timeout is used instead of a transitionend listener because
+    // transitionend bubbles from every descendant (including the
+    // tap-hint's own, much faster, fade), which fired far too early.
+    window.setTimeout(function () {
+      presentBtn.classList.add("is-hidden");
+    }, 1200);
   }
 
   presentBtn.addEventListener("click", openPresent);
